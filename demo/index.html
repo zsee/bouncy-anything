@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+</html>
+
+<body>
+    <div>
+        <h4>Options (must be a valid JSON)</h4>
+        <textarea id="settings">
+{
+    "bouncyImages": ["/demo/bouncy.png", "/demo/bouncy2.png"],
+    "backgroundImage": "/demo/background.png",
+    "topPipeImage": "/demo/topPipe.png",
+    "bottomPipeImage": "/demo/bottomPipe.png",
+    "introTextTitle": "Bouncy fish"
+}
+        </textarea>
+        <button onclick="openIframe()">Show me!</button>
+    </div>
+    <h4>Game</h4>
+    <iframe id="content" width="680" height="500" style="border: none">
+    </iframe>
+    <script>
+        function openIframe() {
+            var iframe = document.getElementById('content');
+            var settings = document.getElementById("settings").value;
+            var url = "/demo/iframe.html?options=" + encodeURIComponent(settings);
+            iframe.src = url;
+        }
+    </script>
+    <div>
+        <a href="https://www.freepik.com/free-photos-vectors/sea">Sea vector created by Terdpongvector - Freepik.com</a>
+    </div>
+    <div>
+        <a href="https://www.freepik.com/free-photos-vectors/water">Water image created by Derich - Freepik.com</a>
+    </div>
+    <div>
+        <label>Coralls:</label>
+        <a href="https://www.vecteezy.com/">Designed with the Vecteezy Editor</a>
+        <a href="https://www.vecteezy.com">Vectors by Vecteezy!</a>
+    </div>
+</body>

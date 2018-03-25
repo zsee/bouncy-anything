@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Demo</title>
+</head>
+
+<body>
+    <div id="container">
+
+    </div>
+    <script src="../dist/bundle.js"></script>
+    <script src="../bundle.js"></script>
+    <script>
+        var options = decodeURIComponent(window.location.search.split('=')[1]);
+        options = JSON.parse(options);
+        function createImage(url) {
+            var image = document.createElement('img');
+            image.src = url;
+            return image;
+        }
+        options.bouncyImages = options.bouncyImages.map(createImage);
+        options.backgroundImage = createImage(options.backgroundImage);
+        options.topPipeImage = createImage(options.topPipeImage);
+        options.bottomPipeImage = createImage(options.bottomPipeImage);
+        options.container = document.getElementById('container');
+        window.startBouncyAnything(options);
+    </script>
+</body>
+
+</html>
