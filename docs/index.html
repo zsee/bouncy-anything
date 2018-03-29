@@ -4,7 +4,9 @@
 </html>
 
 <body>
-    <h1>Bouncy Anything Demo <a href="https://github.com/zsee/bouncy-anything">View GitHub project</a></h1>
+    <h1>Bouncy Anything Demo
+        <a href="https://github.com/zsee/bouncy-anything">View GitHub project</a>
+    </h1>
     <div>
         <h4>Options (must be a valid JSON)</h4>
         <textarea id="settings">
@@ -17,11 +19,24 @@
 }
         </textarea>
         <button onclick="openIframe()">Show me!</button>
+        <div>
+            <button onclick="easterBunnyDemo()">Show Easter Bunny demo!</button>
+        </div>
     </div>
     <h4>Game</h4>
     <iframe id="content" width="680" height="500" style="border: none">
     </iframe>
     <script>
+        function easterBunnyDemo() {
+            document.getElementById('settings').value = JSON.stringify({
+                "bouncyImages": ["bouncy-bunny.png", "bouncy-bunny2.png"],
+                "backgroundImage": "background-lightblue.png",
+                "topPipeImage": "topPipe-eggs.png",
+                "bottomPipeImage": "bottomPipe-eggs.png",
+                "introTextTitle": "Square Easter bunny"
+            });
+            openIframe();
+        }
         function openIframe() {
             var iframe = document.getElementById('content');
             var settings = document.getElementById("settings").value;
